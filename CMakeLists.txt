@@ -10,7 +10,9 @@ FetchContent_Declare(SFML
     GIT_TAG 2.6.x)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(BinarySnake src/main.cpp)
+add_executable(BinarySnake src/main.cpp
+        src/graphics/grid.h
+        src/graphics/grid.h)
 target_link_libraries(BinarySnake PRIVATE sfml-graphics)
 target_compile_features(BinarySnake PRIVATE cxx_std_17)
 
