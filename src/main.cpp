@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "graphics/grid.h"
+#include "graphics/snake.h"
 
 int main() {
     constexpr unsigned int windowWidth = 1366u;
@@ -10,6 +11,9 @@ int main() {
 
     // Create a 2D array to represent the grid
    auto grid = setup_grid(windowWidth, windowHeight);
+
+    // Create the snake's body
+    auto snake = draw_snake();
 
     while (window.isOpen()) {
         for (auto event = sf::Event{}; window.pollEvent(event);) {
@@ -26,6 +30,9 @@ int main() {
                 window.draw(cell);
             }
         }
+
+        // Draw the snake
+        window.draw(snake);
 
         window.display();
     }
