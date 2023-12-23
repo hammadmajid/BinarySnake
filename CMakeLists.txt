@@ -11,8 +11,8 @@ FetchContent_Declare(SFML
 FetchContent_MakeAvailable(SFML)
 
 add_executable(BinarySnake src/main.cpp
-        src/graphics/grid.h
-        src/graphics/snake.h)
+        src/grid.h
+        src/snake.h)
 target_link_libraries(BinarySnake PRIVATE sfml-graphics)
 target_compile_features(BinarySnake PRIVATE cxx_std_17)
 

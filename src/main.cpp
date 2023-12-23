@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
-#include "graphics/grid.h"
-#include "graphics/snake.h"
+#include "grid.h"
+#include "snake.h"
 
 int main() {
     constexpr unsigned int windowWidth = 1366u;
@@ -9,11 +9,10 @@ int main() {
     auto window = sf::RenderWindow{{windowWidth, windowHeight}, "Binary Snake"};
     window.setFramerateLimit(20);
 
-    // Create a 2D array to represent the grid
-   auto grid = setup_grid(windowWidth, windowHeight);
+    auto grid = Grid::setup_grid(windowWidth, windowHeight);
 
-    // Create the snake's body
-    auto snake = draw_snake(windowWidth, windowHeight);
+    Snake snake(windowWidth, windowHeight);
+    auto snake_body = snake.draw_snake();
 
     // Directions for the snake
     float xDirection = 0.0f;
@@ -36,27 +35,11 @@ int main() {
         }
 
         // Draw the snake
-        window.draw(snake);
+        window.draw(snake_body);
 
         // Move the snake
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::J)) { // Up
-            yDirection = 20.0f;
-            xDirection = 0.0f;
-        }
-        else if(sf::Keyboard::isKeyPressed(sf::Keyboard::K)) { // Down
-            yDirection = -20.0f;
-            xDirection = 0.0f;
-        }
-        else if(sf::Keyboard::isKeyPressed(sf::Keyboard::L)) { // Right
-            xDirection = 20.0f;
-            yDirection = 0.0f;
-        }
-        else if(sf::Keyboard::isKeyPressed(sf::Keyboard::H)) { // Left
-            xDirection = -20.0f;
-            yDirection = 0.0f;
-        }
-
-        snake.move(xDirection, yDirection);
+        Snake::set_direction(xDirection, yDirection);
+        snake_body.move(xDirection, yDirection);
 
         window.display();
     }
