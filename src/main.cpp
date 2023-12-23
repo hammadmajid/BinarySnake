@@ -7,7 +7,7 @@ int main() {
     constexpr unsigned int windowHeight = 768u;
 
     auto window = sf::RenderWindow{{windowWidth, windowHeight}, "Binary Snake"};
-    window.setFramerateLimit(144);
+    window.setFramerateLimit(20);
 
     // Create a 2D array to represent the grid
    auto grid = setup_grid(windowWidth, windowHeight);
