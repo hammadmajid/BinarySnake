@@ -1,6 +1,6 @@
 #ifndef SNAKE_H
 #define SNAKE_H
-#include "../cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp"
+#include "SFML/Graphics/RectangleShape.hpp"
 
 inline auto draw_snake(const unsigned int windowWidth, const unsigned int windowHeight) -> sf::RectangleShape {
     sf::RectangleShape snake;
