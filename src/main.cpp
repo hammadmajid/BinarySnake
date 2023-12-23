@@ -12,7 +12,7 @@ int main() {
     auto grid = Grid::setup_grid(windowWidth, windowHeight);
 
     Snake snake(windowWidth, windowHeight);
-    auto snake_body = snake.draw_snake(windowWidth, windowHeight);
+    auto snake_body = snake.draw_snake();
 
     // Directions for the snake
     float xDirection = 0.0f;
@@ -38,7 +38,7 @@ int main() {
         window.draw(snake_body);
 
         // Move the snake
-        snake.set_direction(xDirection, yDirection);
+        Snake::set_direction(xDirection, yDirection);
         snake_body.move(xDirection, yDirection);
 
         window.display();

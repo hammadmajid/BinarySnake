@@ -11,19 +11,19 @@ public:
                                                                              m_windowHeight(windowHeight) {
     }
 
-    static auto draw_snake(const unsigned int windowWidth, const unsigned int windowHeight) -> sf::RectangleShape {
+    [[nodiscard]] auto draw_snake() const -> sf::RectangleShape {
         sf::RectangleShape snake;
 
         snake.setSize(sf::Vector2f(20u, 20u));
-        const float startX = static_cast<float>(windowWidth) / 2.0f;
-        const float startY = static_cast<float>(windowHeight) / 2.0f;
+        const float startX = static_cast<float>(m_windowWidth) / 2.0f;
+        const float startY = static_cast<float>(m_windowHeight) / 2.0f;
         snake.setPosition(startX, startY);
         snake.setFillColor(sf::Color::Cyan);
 
         return snake;
     }
 
-    auto set_direction(float &xDirection, float &yDirection) -> void {
+    static auto set_direction(float &xDirection, float &yDirection) -> void {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::J)) { // Up
             yDirection = 20.0f;
             xDirection = 0.0f;
