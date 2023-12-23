@@ -15,6 +15,10 @@ int main() {
     // Create the snake's body
     auto snake = draw_snake(windowWidth, windowHeight);
 
+    // Directions for the snake
+    float xDirection = 0.0f;
+    float yDirection = 0.0f;
+
     while (window.isOpen()) {
         for (auto event = sf::Event{}; window.pollEvent(event);) {
             if (event.type == sf::Event::Closed) {
@@ -33,6 +37,26 @@ int main() {
 
         // Draw the snake
         window.draw(snake);
+
+        // Move the snake
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::J)) { // Up
+            yDirection = 20.0f;
+            xDirection = 0.0f;
+        }
+        else if(sf::Keyboard::isKeyPressed(sf::Keyboard::K)) { // Down
+            yDirection = -20.0f;
+            xDirection = 0.0f;
+        }
+        else if(sf::Keyboard::isKeyPressed(sf::Keyboard::L)) { // Right
+            xDirection = 20.0f;
+            yDirection = 0.0f;
+        }
+        else if(sf::Keyboard::isKeyPressed(sf::Keyboard::H)) { // Left
+            xDirection = -20.0f;
+            yDirection = 0.0f;
+        }
+
+        snake.move(xDirection, yDirection);
 
         window.display();
     }
