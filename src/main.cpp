@@ -13,7 +13,7 @@ int main() {
    auto grid = setup_grid(windowWidth, windowHeight);
 
     // Create the snake's body
-    auto snake = draw_snake();
+    auto snake = draw_snake(windowWidth, windowHeight);
 
     while (window.isOpen()) {
         for (auto event = sf::Event{}; window.pollEvent(event);) {
