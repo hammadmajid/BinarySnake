@@ -22,6 +22,25 @@ public:
 
         return snake;
     }
+
+    auto set_direction(float &xDirection, float &yDirection) -> void {
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::J)) { // Up
+            yDirection = 20.0f;
+            xDirection = 0.0f;
+        }
+        else if(sf::Keyboard::isKeyPressed(sf::Keyboard::K)) { // Down
+            yDirection = -20.0f;
+            xDirection = 0.0f;
+        }
+        else if(sf::Keyboard::isKeyPressed(sf::Keyboard::L)) { // Right
+            xDirection = 20.0f;
+            yDirection = 0.0f;
+        }
+        else if(sf::Keyboard::isKeyPressed(sf::Keyboard::H)) { // Left
+            xDirection = -20.0f;
+            yDirection = 0.0f;
+        }
+    }
 };
 
 #endif //SNAKE_H

@@ -38,23 +38,7 @@ int main() {
         window.draw(snake_body);
 
         // Move the snake
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::J)) { // Up
-            yDirection = 20.0f;
-            xDirection = 0.0f;
-        }
-        else if(sf::Keyboard::isKeyPressed(sf::Keyboard::K)) { // Down
-            yDirection = -20.0f;
-            xDirection = 0.0f;
-        }
-        else if(sf::Keyboard::isKeyPressed(sf::Keyboard::L)) { // Right
-            xDirection = 20.0f;
-            yDirection = 0.0f;
-        }
-        else if(sf::Keyboard::isKeyPressed(sf::Keyboard::H)) { // Left
-            xDirection = -20.0f;
-            yDirection = 0.0f;
-        }
-
+        snake.set_direction(xDirection, yDirection);
         snake_body.move(xDirection, yDirection);
 
         window.display();
