@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "grid.h"
-#include "graphics/snake.h"
+#include "snake.h"
 
 int main() {
     constexpr unsigned int windowWidth = 1366u;
