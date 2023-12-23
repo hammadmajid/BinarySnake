@@ -2,7 +2,7 @@
 #define GRID_H
 
 #include <vector>
-#include "SFML/Graphics/RectangleShape.hpp"
+#include "../cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp"
 
 inline auto setup_grid(const unsigned int windowWidth, const unsigned int windowHeight) -> std::vector<std::vector<sf::RectangleShape>> {
         constexpr unsigned int gridSize = 30u;

@@ -1,5 +1,5 @@
 #include <SFML/Graphics.hpp>
-#include "graphics/grid.h"
+#include "grid.h"
 #include "graphics/snake.h"
 
 int main() {
