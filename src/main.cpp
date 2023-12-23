@@ -9,8 +9,7 @@ int main() {
     auto window = sf::RenderWindow{{windowWidth, windowHeight}, "Binary Snake"};
     window.setFramerateLimit(20);
 
-    // Create a 2D array to represent the grid
-   auto grid = setup_grid(windowWidth, windowHeight);
+    auto grid = Grid::setup_grid(windowWidth, windowHeight);
 
     // Create the snake's body
     auto snake = draw_snake(windowWidth, windowHeight);
