@@ -11,8 +11,8 @@ int main() {
 
     auto grid = Grid::setup_grid(windowWidth, windowHeight);
 
-    // Create the snake's body
-    auto snake = draw_snake(windowWidth, windowHeight);
+    Snake snake(windowWidth, windowHeight);
+    auto snake_body = snake.draw_snake(windowWidth, windowHeight);
 
     // Directions for the snake
     float xDirection = 0.0f;
@@ -35,7 +35,7 @@ int main() {
         }
 
         // Draw the snake
-        window.draw(snake);
+        window.draw(snake_body);
 
         // Move the snake
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::J)) { // Up
@@ -55,7 +55,7 @@ int main() {
             yDirection = 0.0f;
         }
 
-        snake.move(xDirection, yDirection);
+        snake_body.move(xDirection, yDirection);
 
         window.display();
     }
