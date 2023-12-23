@@ -2,7 +2,7 @@
 #define GRID_H
 
 #include <vector>
-#include "../cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp"
+#include "SFML/Graphics/RectangleShape.hpp"
 
 class Grid {
     static void initialize_grid(const unsigned gridSize, const unsigned cellSize,
